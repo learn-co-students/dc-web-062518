@@ -6,12 +6,36 @@
 * Explain the concept of sending messages
 * Create a class and instantiate an instance of the class
 * Explain the difference between a class and an instance
+blueprint vs. copies
 * Pass arguments to `new` by defining an initialize method in class
 * Create instance methods
 * Call methods on the implicit or explicit `self`
 * Define attribute readers and writers using `attr_` macros
 * Get more practice with array compositions (`each`, `map`, `select`/`filter`)
+
 * Explain the need for variable scope and why it's important to not utilize global variables
+
+## Objects
+
+Point in memory that holds a blueprint
+Representation of something
+Holds attributes and methods (actions)
+`class`
+instances
+`def ` - getters and setters, methods, 'give objects some ability'
+customization from a baseline or blueprint
+`new` - create a new object
+
+example - Document Object Model - javascript
+
+Representing 'things in the world' in code
+
+'Everything is an object'
+nouns
+some data
+some behavior
+
+Model of the world
 
 ## Deliverables
 
