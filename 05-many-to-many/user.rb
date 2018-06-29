@@ -17,6 +17,11 @@ class User
     @tweets << tweet
   end
 
+  def post_tweet(message)
+    Tweet.new(message, self)
+    # add_tweet(new_tweet) - done for us in the Tweet#initialize
+  end
+
   def self.all
     @@all
   end

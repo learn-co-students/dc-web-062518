@@ -17,6 +17,10 @@ class Tweet
   def self.all
     @@all
   end
+
+  def username
+    @user.name
+  end
 end
 
 dad = User.new("dad jokes", "dadtellsjokes")
