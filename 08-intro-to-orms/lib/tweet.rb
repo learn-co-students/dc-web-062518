@@ -1,21 +1,26 @@
 class Tweet
   attr_accessor :message, :username
-  ALL = []
 
   def self.all
-    ALL
+    tweets = self.select_all_tweets
+    tweets.map { |hash| Tweet.new(hash) }
   end
 
   def initialize(props={})
     @message = props['message']
     @username = props['username']
-    ALL << self
   end
 
   def save
     # @message
     # @username
-    DB[:conn].execute("INSERT INTO tweets (username, message) VALUES (?, ?);", @username, @message)
+
+    # BUG: creates a new tweet when we save an existing tweet
+    sql = <<-SQL
+INSERT INTO tweets (username, message)
+VALUES (?, ?);
+SQL
+    DB[:conn].execute(sql, @username, @message)
     self
   end
 
@@ -32,8 +37,9 @@ class Tweet
   # find by tweets by tags
 
   # find by id
-  def find_by_id
-    
+  def self.find_by_id(id)
+    array_with_data = DB[:conn].execute("SELECT * FROM tweets WHERE id = ?", id)
+    Tweet.new(array_with_data[0])
   end
 
   # find tweets by username

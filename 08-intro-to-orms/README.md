@@ -1,10 +1,25 @@
 # Intro to ORMs (Object Relational Mappers)
 
 * Define Object Relational Mapper (ORM)
+  Maps ruby objects to database tables
+
+class Tweet <=> table tweets
+instance_vars (attr_accessor) <=> sql columns
+
+methods <=> SQL commands
+  CRUD
+
 * Distinguish between ORM and SQL
 * Demonstrate that ORMs are the pattern connecting scripting languages and databases
+
 * Explain how the sqlite gem works as a driver or wrapper around SQL
+
+Driver - sends the actual sqlite commands to sqlite3
+ORM - uses the driver to send specific commands
+
 * Use HEREDOCs saved in variables to be executed by SQL driver
+
+
 * Perform persistent CRUD actions on two separate models
 
 ## Notes
@@ -63,12 +78,12 @@ CRUD
 
 ```
 #save (Create)
-#read (find in different ways)
+read (find in different ways)
+  #find_by_id
 #update
 #delete
 .select_all_tweets
 ```
-
 
 ### User
 has a username
