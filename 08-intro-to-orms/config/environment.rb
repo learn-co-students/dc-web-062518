@@ -1,5 +1,5 @@
 require 'bundler'
-Bundler.require
+Bundler.require # require 'pry' and require 'sqlite3'
 
 DB = {
   conn: SQLite3::Database.new('db/twitter.db')

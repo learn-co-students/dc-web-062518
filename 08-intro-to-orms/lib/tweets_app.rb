@@ -1,6 +1,9 @@
 class TweetsApp
 
   def call
+
+    # Tweet.create_rob_tweet
+
     puts 'Welcome to Twitter'
 
     puts 'Enter a username:'
@@ -9,7 +12,8 @@ class TweetsApp
     puts 'Enter a message:'
     message = gets.chomp
 
-    tweet = Tweet.new({'username' => username, 'message' => message})
+    tweet = Tweet.create({'username' => username, 'message' => message})
+    binding.pry
 
     tweets = Tweet.all
     render(tweets)
