@@ -48,8 +48,14 @@ write our tests in `spec/_name_of_file_spec.rb`
 
 `describe` - block that describes the behavior of some part of your application
 
+`it`
+`expect`
+matchers
 
-
+to eq vs to be
+  similar
+  but `to eq` uses == (less strict)
+  `to be` checks for object equality
 
 when you run your tests:
 - Error - ruby had an error
@@ -67,6 +73,8 @@ Testing also allows us to check for specific behavior, allowing us to _assume_ o
 Finally, we can use testing to refactor or change our code without worrying about errant behavior, since the test will catch any mistakes that we inevitably make.
 
 ## Setting up a project
+
+one spec file per model file
 
 ## Further Reading
 

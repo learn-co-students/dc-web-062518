@@ -24,3 +24,30 @@ describe 'is_palindrome?' do
   # numbers (in the string)
   # punctuation (alternate characters)
 end
+
+describe 'factorial' do
+  it 'returns the factorial of n' do
+    expect(factorial(5)).to eq 120
+    expect(factorial(4)).to eq 24
+  end
+
+  it 'raises an error on a negative input' do
+    expect { factorial(-5) }.to raise_error("argument must be positive")
+  end
+
+  it 'handles 0 appropriately' do
+    expect(factorial(0)).to eq 1
+  end
+
+  it 'handles 1 appropriately' do
+    expect(factorial(1)).to eq 1
+  end
+
+  it 'raises an error on a float' do
+    expect { factorial(1.5) }.to raise_error("argument must be an integer")
+  end
+
+  it 'raises an error if passed an argument that is not an integer' do
+    expect { factorial('apple')}.to raise_error('argument must be an integer')
+  end
+end
