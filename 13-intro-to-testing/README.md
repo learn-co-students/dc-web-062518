@@ -10,6 +10,51 @@
 
 ## Reasons to test
 
+- reminders for what you are trying to accomplish
+- make sure that you are getting the expected output
+- prevent regressions
+- get error messages - tell you where your code is failing
+  - tests help guide development
+- organize the process around your code
+  - help plan ahead, so you know the order to build things
+
+- validation
+- helping refactoring
+  - modifying existing code to have the same output but a different way
+  - helper functions, DRY, cleaning
+
+- help you consider edge cases
+  - different types of input
+  - empty (very short)
+  - large sizes
+  - different characters (and character formats)
+  - capitalization, spacing
+
+## Test Driven Development
+
+write your tests first
+
+add a test until you have an error
+fix one error at a time
+every change you make, run tests
+
+Red Green Refactor
+
+## RSpec
+
+testing library
+rspec --init
+write our tests in `spec/_name_of_file_spec.rb`
+
+`describe` - block that describes the behavior of some part of your application
+
+
+
+
+when you run your tests:
+- Error - ruby had an error
+- Failure - expectation not met
+
 ## Why Testing?
 Why is Unit testing important? Most of our large code projects are more like frankenstein's monster or the Power Rangers Megazord than anything else:
 
