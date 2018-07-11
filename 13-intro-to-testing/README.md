@@ -1,15 +1,15 @@
 # Testing in Ruby
 
-* Integrate testing into their current projects using RSpec
-* Set up testing in a new project
-* Define Test-Driven development
-* Describe what a testing framework is and what the RSpec framework does
-* Write tests for a basic function while considering entire problem space
+* Describe what a testing framework is
+* Define Test-driven development
+* Integrate testing into projects using RSpec
+* Write tests for a basic function
 * Describe the difference between failing, passing, and pending test cases
 * Define assertions and matchers in the context of test cases
 * Use output from a testing framework to guide their development
 
 ## Reasons to test
+
 ## Why Testing?
 Why is Unit testing important? Most of our large code projects are more like frankenstein's monster or the Power Rangers Megazord than anything else:
 
