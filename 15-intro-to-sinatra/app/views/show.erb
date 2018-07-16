@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Book Detail</title>
+    <title>Detail Page</title>
 </head>
 <body>
-    <h1><%=@book.title%></h1> 
-    <h2>by <%=@book.author%></h2>
 
-    <div>
-        <%= @book.snippet %>
-    </div>
+    <h1><%= @book.title %></h1>
+    <h2>by: <%= @book.author %></h2>
 
-    <a href="/books">Home</a>
+    <div><%= @book.snippet %></div>
 
+    <a href="/books">Index Page</a>
 </body>
 </html>
-
