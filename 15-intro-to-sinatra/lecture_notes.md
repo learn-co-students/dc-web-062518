@@ -12,7 +12,8 @@
 
 - Show structure of new app with MVC folders.
 
-- Create migration for the `books` table.
+- Create migration for the `books` table. `rake db:migrate:create_migration NAME=create_books_table`
+- `rake db:migrate SINATRA_ENV=development`
 - Show seed table using Google Books
 
 ```

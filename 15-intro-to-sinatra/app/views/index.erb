@@ -1,7 +1,14 @@
-<h1>Index page of all books</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index Page</title>
+</head>
+<body>
 
-<ul>
-<% @books.each do |book| %>
-    <li><a href="/books/<%=book.id%>"><%=  book.title %></a></li>
-<% end %>
-</ul>
+    <ul>
+        <% @books.each do |book| %>
+            <li><a href="/books/<%= book.id %>"><%= book.title %></a></li>
+        <% end %>
+    </ul>
+</body>
+</html>

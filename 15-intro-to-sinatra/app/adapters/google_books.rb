@@ -5,7 +5,7 @@ module GoogleBooks
     attr_reader :author
 
     def initialize(author)
-      @author = author_sanitizer(author)
+      @author = author
     end
 
     def fetch_books
@@ -24,7 +24,7 @@ module GoogleBooks
     private
 
     def author_url(max_results = 20)
-      "#{BASE_URL}#{author}&maxResults=#{max_results}"
+      "#{BASE_URL}#{author_sanitizer(author)}&maxResults=#{max_results}"
     end
 
     def author_sanitizer(author)
