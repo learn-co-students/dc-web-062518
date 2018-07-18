@@ -9,10 +9,19 @@ class ApplicationController < Sinatra::Base
       erb :home
     end
 
-
-    get '/books' do 
+    get '/books' do
         @books = Book.all
         erb :index
+    end
+
+    get '/authors' do
+      @authors = Author.all
+      erb :authors_index
+    end
+
+    get '/authors/:id' do
+      @author = Author.find(params[:id])
+      erb :author_show
     end
 
     get '/books/new' do
@@ -33,7 +42,7 @@ class ApplicationController < Sinatra::Base
         erb :show
     end
 
-    get '/books/:id/edit' do 
+    get '/books/:id/edit' do
         @book = Book.find(params[:id])
         erb :edit
     end
@@ -64,7 +73,7 @@ class ApplicationController < Sinatra::Base
     private
 
     def book_params(params)
-        author = params[:author]
+        author = Author.find(params[:author_id])
         title = params[:title]
         snippet = params[:snippet]
 

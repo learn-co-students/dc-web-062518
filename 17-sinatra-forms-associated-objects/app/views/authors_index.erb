@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Authors</h2>
+    <ul>
+    <% @authors.each do |author| %>
+      <li><a href="/authors/<%= author.id %>"><%= author.name %></a></li>
+    <% end %>
+    </ul>
+
+  </body>
+</html>
