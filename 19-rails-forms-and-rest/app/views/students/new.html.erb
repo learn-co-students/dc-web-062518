@@ -1,0 +1,9 @@
+<h1> Create a new student </h1>
+
+<%= form_for @student do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, id: 'student_name' %>
+  <%= f.label :cohort %>
+  <%= f.select :cohort %>
+  <%= f.submit %>
+<% end %>

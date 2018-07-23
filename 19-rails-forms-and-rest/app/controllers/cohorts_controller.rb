@@ -35,8 +35,10 @@ class CohortsController < ApplicationController
     end
   end
 
-  def delete
+  # controller action is called destroy
+  def destroy
     Cohort.destroy(params[:id])
+    redirect_to cohorts_path
   end
 
   private
