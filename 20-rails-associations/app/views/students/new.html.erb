@@ -4,6 +4,8 @@
   <%= f.label :name %>
   <%= f.text_field :name, id: 'student_name' %>
   <%= f.label :cohort %>
-  <%= f.select :cohort %>
+  <%= f.collection_select :cohort_id, Cohort.all, :id, :name %>
   <%= f.submit %>
 <% end %>
+
+<%= @student.errors.messages %>
