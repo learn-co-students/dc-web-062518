@@ -1,0 +1,11 @@
+<h1><%= @cohort.name %></h1>
+<a href="/cohorts/<%= @cohort.id %>/edit">Edit</a>
+<!-- <form action="<%= cohort_path(@cohort) %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" id="hidden" name="_method" value="DELETE">
+  <input type="submit" value="DELETE">
+</form> -->
+
+<%= form_for @cohort, method: :delete do |f| %>
+  <% f.submit "👹 DELETE" %>
+<% end %>
