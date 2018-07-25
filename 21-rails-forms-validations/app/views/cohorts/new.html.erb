@@ -1,0 +1,12 @@
+<form action="/cohorts" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>
+    <input type="text" name="cohort[name]" value="<%= @cohort.name %>">
+  </label>
+
+  <input type="submit">
+</form>
+
+<% @cohort.errors.messages.values.flatten.each do |message| %>
+  <span style="color:red"><%= message %></span>
+<% end %>
