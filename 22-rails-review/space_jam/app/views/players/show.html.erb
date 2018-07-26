@@ -1,0 +1,6 @@
+<%= @player.name %><br>
+<%= @player.team.name %>
+<!-- players -->
+<%= form_for @player, method: 'delete' do |f|%>
+<%= f.submit "Delete" %>
+<% end %>
