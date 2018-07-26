@@ -1,0 +1,11 @@
+<h1>Editing Student <%= @student.name %></h1>
+
+<%= form_for @student do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, id: 'student_name' %>
+  <%= f.label :cohort_id, "Select your cohort here:"%>
+  <%= f.collection_select :cohort_id, @cohorts, :id, :capitalized_name %>
+  <%= f.submit %>
+<% end %>
+
+<%= @student.errors.messages %>

@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: [:show, :edit, :update, :delete]
+  # GET /students/6365  => show action, params[:id] = 6365
+  before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def index
     # we could use this in the view - technically
@@ -13,6 +14,7 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
+    @cohorts = Cohort.all.sort_by { |c| c.name }
   end
 
   def create
@@ -25,15 +27,21 @@ class StudentsController < ApplicationController
   end
 
   def edit
-
+    @cohorts = Cohort.all.sort_by { |c| c.name }
   end
 
   def update
-
+    @student.update(student_params)
+    if @student.errors.any?
+      render :edit
+    else
+      redirect_to student_path(@student)
+    end
   end
 
-  def delete
-
+  def destroy
+    @student.delete
+    redirect_to students_path
   end
 
   private
@@ -47,6 +55,6 @@ class StudentsController < ApplicationController
       # name: params[:student][:name],
       # cohort_id: params[:student][:cohort_id]
     # }
-    params.permit(student: [:name, :cohort_id])[:student]
+    params.require(:student).permit(:name, :cohort_id)
   end
 end

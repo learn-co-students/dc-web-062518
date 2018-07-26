@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :students, except: [:delete]
+  resources :students #, except: [:delete]
   # get '/cohorts/:id' # '/cohorts/2'
   resources :cohorts #, only: [:index, :show, :new, :create, :edit, :update]
 

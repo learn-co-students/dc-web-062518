@@ -1,0 +1,4 @@
+<h1><%= @student.name %></h1>
+<h2><%= link_to @student.cohort.capitalized_name, cohort_path(@student.cohort) %></h2>
+<%= link_to "Edit", edit_student_path(@student) %>
+<%= button_to "Delete this student", { action: "destroy", id: @student.id }, method: "delete" %>
