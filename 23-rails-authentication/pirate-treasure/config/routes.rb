@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   end
 
   resources :clues, only: [:index, :show]
+
+  # authenticate
+  get '/sign_in', to: 'sessions#new'
+  post '/sign_in', to: 'sessions#create'
 end

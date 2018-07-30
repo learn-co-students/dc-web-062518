@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180730160049) do
+ActiveRecord::Schema.define(version: 20180730191847) do
 
   create_table "clues", force: :cascade do |t|
     t.text "message"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180730160049) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end
