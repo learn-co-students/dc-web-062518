@@ -1,0 +1,6 @@
+<h1><%= @user.name %>'s Treasure</h1>
+<ul>
+  <% @treasures.each do |t| %>
+    <li><%= link_to t.name, user_treasure_path(@user, t) %></li>
+  <% end %>
+</ul>

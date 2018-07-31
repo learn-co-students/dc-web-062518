@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-pirates = User.create([{name: "Blackbeard"}, {name: "Hook"}, {name: "John Silver"}, {name: "Crunch"}, {name: "Jack Sparrow"}, {name: "Monkey D. Luffy"}, {name: "Orm the Red"}, {name: "Bluebeard"}, {name: "Graybeard"}, {name: "Yellowbeard"}])
+pirates = User.create([{name: "Blackbeard", password: "pw"}, {name: "Hook", password: "pw"}, {name: "John Silver", password: "pw"}, {name: "Crunch", password: "pw"}, {name: "Jack Sparrow", password: "pw"}, {name: "Monkey D. Luffy", password: "pw"}, {name: "Orm the Red", password: "pw"}, {name: "Bluebeard", password: "pw"}, {name: "Graybeard", password: "pw"}, {name: "Yellowbeard", password: "pw"}])
 
 statuses = ["Buried", "Sunken", "Hidden", "Lost", "Tarnished", "Grand", "Stolen", "Magic", "Moldy"]
 kinds = ["Gold", "Rubies", "Armor", "Booty", "Silver", "Plunder", "Rum", "Diamonds", "Notes", "Dagger", "Eye", "Heart"]

@@ -1,10 +1,13 @@
-# Rails Authentication
+# Rails Authentication and Authorization
 
-Goals:
+Yesterday:
 - Define Authentication and Authorization
 - Walk through Sign up / Sign in Flows
 - Discuss security and ways to protect users with hashed passwords and bcrypt
+
+Goals:
 - Build Sign Up and Sign In flows in Rails
+- Use Cookie-based Sessions to prevent users from having to sign in again
 
 ## "Don't roll your own Auth"
 
@@ -14,7 +17,6 @@ Authentication - you are who you say you are - verification of identity
 
 Authorization - given who you are, what are you allowed to do
     role based (e.g. admins, users, moderators)
-
 
 ## Sign Up and Sign In Flows
 
