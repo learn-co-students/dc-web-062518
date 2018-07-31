@@ -62,6 +62,8 @@ Users should be able to see all the clues
 
 DO NOT HAVE PLAINTEXT PASSWORDS IN YOUR DATABASE
 
+Don't commit your keys
+
 Not only malicious actors, but also, your own liability!
 
 encrypting the passwords - do not try this yourself
@@ -76,3 +78,29 @@ has_secure_password
 
 ## Is this the best way?
 There are gems to do more for us [devise, knock, cancancan]
+
+## HTTP is stateless
+we need to add additional data to the request so that we know who it is
+
+
+## Cookies
+
+browser stores them per site
+sends them on subsequent requests
+
+we want to store a cookie on the browser
+read this cookie on later requests
+use that to store information about the user
+
+Questions:
+What if someone else gets the cookie?
+How long should the cookie live?
+How to prevent bad folks from faking cookies?
+
+## Cryptography
+1. Can't get any information out of the encrypted message
+2. No tampering - we know whether it's been created by us
+
+
+## TODO
+Figure out how to deal with secrets
