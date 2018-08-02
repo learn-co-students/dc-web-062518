@@ -10,41 +10,80 @@
 
 ## CSS Basics
 
-CSS -
-Good CSS vs. bad CSS
+CSS - Cascading Style Sheets
+Makes our website look pretty
+Adds styling to our pages
+
 
 ## Stylesheets and Selectors
 
 How do we add CSS to our HTML page?
+* Inline
+* Internal 
+* External 
 
 Types of CSS selectors
+* HTML tags
+* Classes
+* Ids
 
-Using Multiple Selectors
+```
+HTML Tags:
+p {
+  font-size: 20px;
+}
+
+Class Selector:
+.navbar {
+  margin-bottom: 0px;
+}
+
+ID Selector:
+#main-page-title {
+  font-family: sans-serif;
+}
+
+```
+
 
 ## The Box Model
 
 4 Elements of the box model:
+* Content
+* Padding
+* Border
+* Margin
 
 (Use Chrome Web Developer to explore!)
 
 ## Layouts & Positioning - Floats & Clear
-
+Floats - take our elements outside of the standard flow of the webpage
+```
+.grand-canyon-image {
+  width: 400px;
+  float: left;
+}
+```
+Use clear to make your elements 'clear' any floats and sit inline with the regular flow of the page
+```
+.park-info {
+  clear: both;
+}
+```
 ## Layouts & Positioning - CSS Grid
-
 Grid-based layout system
 Makes it easy to create well-designed and responsive pages
+
 
 ## CSS Frameworks
 
 Does a lot of the CSS work for us
-Semantic UI
-Bootstrap
+[Semantic UI](https://semantic-ui.com/)
+[Bootstrap](https://getbootstrap.com/)
 
 ## Resources
 
-https://www.awwwards.com/
-https://www.epicurrence.com/
-https://semantic-ui.com/
-https://getbootstrap.com/
-https://tympanus.net/codrops/css_reference/
-https://css-tricks.com/
+[Awwwards](https://www.awwwards.com/)
+[codrops](https://tympanus.net/codrops/css_reference/)
+[CSS Tricks](https://css-tricks.com/)
+[CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
