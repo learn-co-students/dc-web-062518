@@ -29,4 +29,4 @@ body: JSON.stringify({
 #### Announcements:
 - Keep working on Code Challenge practices
 
-When <some event> happens, I want to make a <what kind of> fetch and then manipulate the DOM <in what way?>
+```When <some event> happens, I want to make a <what kind of> fetch and then manipulate the DOM <in what way?>```
