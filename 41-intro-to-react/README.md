@@ -1,4 +1,4 @@
-# Intro to React
+# Intro to React - pt. 2
 
 - Understand build tools and show how webpack works
 - Explain why React and declarative programming is special
@@ -27,12 +27,32 @@ Patterns when using React
 
 NPM
 - introduce script tags to include libraries
+- NPM + webpack
 
 Webpack, Babel, JSX
 - difficult to read React.createElement
 
 Each child in an array or iterator should have a unique "key" prop.
 
+## Package Management
+Ruby
+  - Gemfile (Gemfile.lock) (specify dependencies)
+  - bundler (`bundle install`)
+  - Gems
+  - `require 'name-of-gem'`
+
+NPM and Yarn
+  - package.json
+  - `npm install` or `yarn install`
+  - module (package)
+  - `const Name = require('name-of-module')`
+  - `import Name from 'name-of-module'`
+
+## Qs
+
+difference between
+
+`ReactDOM.render` and `render`
 
 ## React and the Virtual DOM
 
