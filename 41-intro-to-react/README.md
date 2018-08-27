@@ -23,6 +23,17 @@ Patterns when using React
 - complex dependencies when adding / removing elements
 - global variables to manage state
 
+## New Problems
+
+NPM
+- introduce script tags to include libraries
+
+Webpack, Babel, JSX
+- difficult to read React.createElement
+
+Each child in an array or iterator should have a unique "key" prop.
+
+
 ## React and the Virtual DOM
 
 ## Creating and rendering components
