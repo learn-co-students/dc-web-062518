@@ -1,0 +1,23 @@
+{
+  "name": "41-intro-to-react",
+  "version": "1.0.0",
+  "description": "- Understand build tools and show how webpack works - Explain why React and declarative programming is special - Start to understand the Virtual DOM - See what a React Component actually is (an object, made by a class or function) - Build custom components and see initial JSX",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.6"
+  }
+}
