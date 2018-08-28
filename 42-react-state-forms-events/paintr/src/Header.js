@@ -33,7 +33,9 @@ import React, { Component } from "react";
 // };
 //
 
-const names = ["Rob", "Ann", "Hillary"];
+// const names = ["Rob", "Ann", "Hillary"];
+// js within jsx
+// {names.map(name => <span>{name}</span>)}
 
 export default class Header extends Component {
   render() {
@@ -44,7 +46,6 @@ export default class Header extends Component {
             <i className={`${this.props.logo} icon`} />
             <div className="content">{this.props.title}</div>
             <div className="sub header">{this.props.description}</div>
-            {names.map(name => <span>{name}</span>)}
           </h2>
         </a>
       </div>
