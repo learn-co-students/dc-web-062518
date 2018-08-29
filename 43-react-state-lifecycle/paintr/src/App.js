@@ -7,7 +7,11 @@ import PaintingsContainer from "./PaintingsContainer";
 
 // React.createElement(Header, { title: "Paintr", descr
 class App extends Component {
+  componentDidMount() {
+    console.log("componentDidMount", "App");
+  }
   render() {
+    console.log("render", "App");
     return (
       <div className="App">
         <Header
