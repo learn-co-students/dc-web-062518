@@ -1,5 +1,4 @@
 import React from "react";
-const hog = require("../cherub.png");
 
 class HogTile extends React.Component {
   constructor(props) {
@@ -8,13 +7,12 @@ class HogTile extends React.Component {
   }
 
   getHogImg = () => {
-    let sluggedName = this.props.hog.name
+    const nameOfFile = this.props.hog.name
+      .toLowerCase()
       .split(" ")
-      .join("_")
-      .toLowerCase();
-    let imgUrl = require(`../hog-imgs/${sluggedName}.jpg`);
-    console.log(imgUrl);
-    return imgUrl;
+      .join("_");
+    const hog = require(`../hog-imgs/${nameOfFile}.jpg`);
+    return hog;
   };
 
   handleButtonClick = () => {

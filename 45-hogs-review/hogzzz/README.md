@@ -1,3 +1,72 @@
+# Questions
+
+1 - figure out your components
+2 - build the static version (using mock data)
+3 - what state do you need?
+
+a. if it never changes, it might not need to be state
+b. if it can be computed from the rest of the state, it should not be in state
+c. state should not depend on props
+
+all the pigs - change from [] => loaded data
+what we are sorting by
+greased or not (what is our filter)
+
+(currentPig / detail pig)
+(for each hogTile, is this tile showing details?)
+
+4 - where should the state live?
+
+filter - App
+sort - App
+detail - HogTile
+
+App to pass filter into Filter
+App to pass sort into Filter
+  change functions into Filter
+
+App to pass ? into the HogContainer
+
+HogTile to manage detail on its own
+
+5 - implement the data flow
+
+set the initial state
+get the state to update over time
+
+
+
+
+- what should be a component?
+draw boxes around parts of the mock
+
+- what if you have to change the components?
+go back to the mock, fit the component heirarchy to the new mock
+
+- state to pass data vs. state of the application
+
+a. if it never changes, it might not need to be state
+
+- when should we have a state?
+
+a. if it never changes, it might not need to be state
+b. if it can be computed from the rest of the state, it should not be in state
+c. state should not depend on props
+
+Minimal necessary
+
+- callback functions on a button
+- radio buttons (value boolean / string)
+- filtering
+- structure / plan for getting the lab completed
+
+Thinking in React
+5 steps
+
+- accessing the local files
+- passing props up and down multiple levels???
+- images to load
+
 # Hogwarts: The React app for fans of prize-winning pigs
 
 ## React Week 1 Project
