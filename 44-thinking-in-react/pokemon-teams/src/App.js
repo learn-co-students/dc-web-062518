@@ -1,18 +1,40 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import PokemonDetail from "./components/PokemonDetail";
+import SearchBar from "./components/SearchBar";
+import PokemonContainer from "./components/PokemonContainer";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      team: [],
+      allPokemon: [],
+      detailPokemonId: null,
+      searchInput: ""
+    };
+  }
+
+  changeSearchInput = searchInput => {
+    this.setState({ searchInput });
+  };
+
+  componentDidMount() {
+    fetch("http://localhost:3001/pokemons")
+      .then(res => res.json())
+      .then(allPokemon => this.setState({ allPokemon }));
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <PokemonContainer pokemons={this.state.team} />
+        <PokemonDetail />
+        <SearchBar
+          value={this.state.searchInput}
+          onChange={this.changeSearchInput}
+        />
+        <PokemonContainer pokemons={this.state.allPokemon} />
       </div>
     );
   }
