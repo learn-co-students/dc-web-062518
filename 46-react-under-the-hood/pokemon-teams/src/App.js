@@ -16,25 +16,45 @@ class App extends Component {
   }
 
   changeSearchInput = searchInput => {
-    this.setState({ searchInput });
+    this.setState(
+      state => ({ searchInput: searchInput }),
+      () =>
+        // called after the state has been set
+        console.log(searchInput, this.state.searchInput)
+    );
+    // fetch
+    // searchPokemon(searchInput);
   };
 
-  componentDidMount() {
+  loadPokemon = () => {
+    this.setState({ allPokemon: [] });
     fetch("http://localhost:3001/pokemons")
       .then(res => res.json())
       .then(allPokemon => this.setState({ allPokemon }));
+  };
+
+  componentDidMount() {
+    this.loadPokemon();
   }
+
+  matchingPokemon = () => {
+    // [] => [] (subset)
+    return this.state.allPokemon.filter(p =>
+      p.name.includes(this.state.searchInput)
+    );
+  };
 
   render() {
     return (
       <div className="App">
+        <button onClick={this.loadPokemon}>Refresh Pokemon List</button>
         <PokemonContainer pokemons={this.state.team} />
         <PokemonDetail />
         <SearchBar
           value={this.state.searchInput}
           onChange={this.changeSearchInput}
         />
-        <PokemonContainer pokemons={this.state.allPokemon} />
+        <PokemonContainer pokemons={this.matchingPokemon()} />
       </div>
     );
   }

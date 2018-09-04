@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
 const pretendPokemon = {
   height: 20,
@@ -44,7 +44,7 @@ const pretendPokemon = {
 
 // React.createElement(name, {props}, undefined)
 
-class PokemonDetail extends Component {
+class PokemonDetail extends PureComponent {
   render() {
     let stats = pretendPokemon.stats.map(stat => {
       return (

@@ -1,15 +1,84 @@
 # React Under the Hood
 
 - Revisiting Webpack, NPM, Babel
-- Presentation and Container components
-- Managing Async Data
-- Revisiting the Component Lifecycle
+
 - Virtual DOM
+- Presentation and Container components
+- Functional Components vs. Class Components
+
 - Higher Order Components
+
+- Managing Async Data
+(loading initial data - componentDidMount)
+
+GET a subset (filter / search)
+How?
+Also on a submit or onChange
+triggered by an event listener
+written in a callback
+
+GET a particular one
+onClick = {this.fetchPokemon}
+or
+(componentDidMount on component that has the data, fetch)
+(refetch on componentDidUpdate)
+
+PATCH - triggered by some UI action
+
+POST - create / makes a new record
+submit button
+triggered by some UI action (or other window action)
+How?
+Callback function in a event listener!
+
+DELETE
+- UI action
+- X - componentWillUnmount
+
+- Revisiting the Component Lifecycle
+managing async data - mostly through events!
+lifecycle methods - setup for timer, manual dom interaction
+using DOM properties (scroll, height)
+
+
+## SearchBar
+
+client side filter
+or
+fetch on change
+
+## Webpack
+
+allows us to import _stuff_ (can be js, css, images)
+creates a 'bundle'
+
+## NPM
+node package manager
+manages our environment, like Gemfile in ruby
+
+## Babel
+
+Converts syntax between different versions of javascript
+https://astexplorer.net/
+
+
+
 
 ## Qs
 
-Functional Components vs. Class Components
+- browser compatibility
+
+
+- managing async data + component lifecycle
+  - fetching + data from a form
+- callback functions (when to use them)
+- dynamic input (click plus, gives another text field)
+  -  for loop inside of render
+- Use react-router-dom
+- filtering function (hogs)
+- passing data 'up'
+- debugging in React
+  - currently guessing and checking
 
 ## Thinking in React
 
