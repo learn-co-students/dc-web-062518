@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Painting = ({ painting, selectPainting }) => {
   return (
@@ -13,13 +14,9 @@ const Painting = ({ painting, selectPainting }) => {
           {painting.title}
         </div>
       </div>
-      <button
-        className="ui button"
-        onClick={() => selectPainting(painting.id)}
-        data-painting-id={painting.id}
-      >
+      <Link className="ui button" to={`/painting/${painting.id}`}>
         More Info
-      </button>
+      </Link>
     </div>
   );
 };

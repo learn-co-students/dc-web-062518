@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PaintingDetails = ({ painting, clearPainting }) => {
   return painting ? (
@@ -16,9 +17,9 @@ const PaintingDetails = ({ painting, clearPainting }) => {
           } in.`}
         </div>
       </div>
-      <button className="ui button" onClick={clearPainting}>
+      <Link to="/" className="ui button">
         Back To Gallery
-      </button>
+      </Link>
     </div>
   ) : (
     <div>Loading...</div>

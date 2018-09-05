@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const NavBar = props => {
   return (
@@ -10,6 +11,17 @@ const NavBar = props => {
           <div className="sub header">{props.subtitle}</div>
         </h2>
       </a>
+      <NavLink activeClassName="ui active item" className="ui item" to="/about">
+        About
+      </NavLink>
+      <NavLink
+        exact
+        to="/"
+        className="ui item"
+        activeClassName="ui active item"
+      >
+        Home
+      </NavLink>
     </div>
   );
 };
