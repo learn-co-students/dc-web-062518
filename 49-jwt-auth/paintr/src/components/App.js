@@ -7,6 +7,7 @@ import PaintingsList from "./PaintingsList";
 import Searchbar from "./Searchbar";
 import PaintingDetails from "./PaintingDetails";
 import About from "./About";
+import Login from "./Login";
 
 class App extends Component {
   constructor() {
@@ -55,6 +56,7 @@ class App extends Component {
           }}
         /> */}
         <Switch>
+          <Route path="/login" component={Login} />
           <Route path="/about" component={About} />
           <Route
             path="/painting/:paintingId"

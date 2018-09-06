@@ -8,35 +8,58 @@
 
 ## Authentication vs. Authorization
 
+
 ### Authentication
-  Confirming who you are
-  Identity
+Confirming who you are
+Identity
+
+Multi-factor (password + phone, email, hardware, Authenticator, Authy)
+
+Some kind of _proof_
 
 ### Authorization
-  permission - based on who you are, what are you allowed to do?
+permission - based on who you are, what are you allowed to do?
 
-  `current_user` - check role, access level
+`current_user` - check role, access level
+Business logic
+ - if you are an admin, you can create a page
+ - if you are a user, you can post a comment
+ - not signed in, you can view a page, but nothing else
+
 
 ## Rails Authentication Review
 ### bcrypt
 password storage (hashed, salted passwords)
+  hashed - one way function
+  salt - add some random string to the password 'password123' + 'aslkdfjalskdfjkasjdf'
+  (rainbow table)
 password_digest
+
 has_secure_password
+  password - doesn't get stored in plaintext
+
+We don't want access to the passwords
+Liability - if we have that access, that's dangerous
 
 ### /login
 route - accepts the username and password
   check the username and password
 start a session
-send back a cookie with the session info
+send back a _cookie_ with the session info
 
 ## Authorization Review
 based on the session info
-before_action - check whether the user was 'Authorized' to access some resource
+before_action - check whether the user was 'Authorized' to access some resource / perform some action
 either allow or respond with some error
 
 Gems:
 - Devise
 - CanCanCan
+
+## How do we do this in React?
+- routes
+- instead of a form submit, use a fetch
+- how do we include our authentication when we're using fetch?
 
 ## Authorization and Authentication in React
 Access the sessions from React?
@@ -50,8 +73,23 @@ Access the sessions from React?
 We are responsible in javascript for supplying the authentication info
 
 ## Token Auth
-
 send back a token as data
+still proving who we are
+
+now it's on us to generate the token, send it back and forth
+
+### Flow
+☑️ user presented with a login form
+☑️ sends the email + password to rails (fetch)
+☑️ rails sends back "token" - contains identifying info
+react includes the token with future requests to prove that it's still the user
+rails checks the token and authorizes based on that info
+
+## Token
+identifies user
+
+protection from eavesdropping - no one can read the data
+protection from tampering - signed, no one can forge a signature
 
 ## JWT
 advanced format for tokens
@@ -87,4 +125,4 @@ Is React State secure?
 Other attack vectors? Liabilities?
 -> Scrub your logs
 
-## React UI for Sign In 
+## React UI for Sign In
