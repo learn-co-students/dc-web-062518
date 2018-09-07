@@ -22,14 +22,18 @@ const NavBar = props => {
       >
         Home
       </NavLink>
-      <NavLink
-        exact
-        to="/login"
-        className="ui item"
-        activeClassName="ui active item"
-      >
-        Login
-      </NavLink>
+      {props.user ? (
+        <span className="ui item">Logged in as: {props.user.name}</span>
+      ) : (
+        <NavLink
+          exact
+          to="/login"
+          className="ui item"
+          activeClassName="ui active item"
+        >
+          Login
+        </NavLink>
+      )}
     </div>
   );
 };

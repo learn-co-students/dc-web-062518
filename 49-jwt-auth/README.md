@@ -8,7 +8,6 @@
 
 ## Authentication vs. Authorization
 
-
 ### Authentication
 Confirming who you are
 Identity
@@ -25,7 +24,6 @@ Business logic
  - if you are an admin, you can create a page
  - if you are a user, you can post a comment
  - not signed in, you can view a page, but nothing else
-
 
 ## Rails Authentication Review
 ### bcrypt
@@ -78,13 +76,6 @@ still proving who we are
 
 now it's on us to generate the token, send it back and forth
 
-### Flow
-☑️ user presented with a login form
-☑️ sends the email + password to rails (fetch)
-☑️ rails sends back "token" - contains identifying info
-react includes the token with future requests to prove that it's still the user
-rails checks the token and authorizes based on that info
-
 ## Token
 identifies user
 
@@ -97,6 +88,37 @@ advanced format for tokens
 Cryptography:
 - Protection from Eavesdropping
 - Protection from Tampering
+
+### Flow
+☑️ user presented with a login form
+☑️ sends the email + password to rails (fetch)
+☑️ rails sends back "token" - contains identifying info
+☑️ react includes the token with future requests to prove that it's still the user
+  - store the token
+  options:
+    - cookies (how we did it in rails)
+    - localStorage
+      - (be there forever)
+      - clear it - on sign out `clear`
+      - we would like to be able to expire tokens after a set amount of time
+      - 'stay signed in'
+      - XSS
+    - state - cleared out every time we refresh
+    - XXXX - don't do this!!! url for react-router
+    - (files, imported files)
+  - include it in future requests
+☑️ rails checks the token and authorizes based on that info
+
+TODO:
+Logout:
+- button in navbar
+- clear localStorage
+- update the state so that it reflects that we are logged out
+
+Better error messages for invalid email / password, failed token
+
+Redirect on login
+
 
 ### In rails...
 JWT Gem

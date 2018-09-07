@@ -2,7 +2,7 @@ import React from "react";
 
 const baseUrl = "http://localhost:3001";
 class Login extends React.Component {
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
     let data = JSON.stringify({
       email: e.target.querySelector('input[name="email"]').value,
@@ -15,8 +15,19 @@ class Login extends React.Component {
         Accept: "application/json"
       },
       body: data
-    });
-  }
+    })
+      .then(res => {
+        if (res.status === 401) {
+          alert("login failed");
+        } else {
+          return res.json();
+        }
+      })
+      .then(json => {
+        this.props.updateUser(json.user);
+        localStorage.setItem("token", json.token);
+      });
+  };
 
   render() {
     return (

@@ -9,24 +9,53 @@ import PaintingDetails from "./PaintingDetails";
 import About from "./About";
 import Login from "./Login";
 
+const requestHelper = url =>
+  fetch(url, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`
+    }
+  }).then(res => {
+    if (res.status === 401) {
+      alert("login failed");
+    } else {
+      return res.json();
+    }
+  });
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       paintings: [],
-      searchTerm: ""
+      searchTerm: "",
+      user: null
       // paintingId: null
     };
   }
 
-  componentDidMount() {
+  fetchPaintings = () => {
     fetch(`http://localhost:3000/paintings`)
       .then(response => response.json())
       .then(paintings => {
-        console.log(paintings);
         this.setState({ paintings });
       });
+  };
+
+  fetchUser = () => {
+    requestHelper("http://localhost:3001/me").then(this.updateUser);
+  };
+
+  componentDidMount() {
+    if (localStorage.getItem("token")) {
+      this.fetchUser();
+    }
+    this.fetchPaintings();
   }
+
+  updateUser = user => {
+    this.setState({ user });
+  };
 
   onSearchHandler = event => {
     this.setState({ searchTerm: event.target.value });
@@ -45,6 +74,7 @@ class App extends Component {
           icon="paint brush"
           color="blue"
           subtitle="List of Paintings"
+          user={this.state.user}
         />
 
         {/* if path matches '/about', render About component, otherwise null */}
@@ -56,7 +86,10 @@ class App extends Component {
           }}
         /> */}
         <Switch>
-          <Route path="/login" component={Login} />
+          <Route
+            path="/login"
+            render={() => <Login updateUser={this.updateUser} />}
+          />
           <Route path="/about" component={About} />
           <Route
             path="/painting/:paintingId"
