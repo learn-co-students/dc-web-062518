@@ -143,15 +143,10 @@ componentDidMount() {
 
 ## Challenge
 
-
-
 Add buttons, actions, and cases to your reducer so that we can increment and decrement by `+3` and `-5`
 
-
-
-
 ## Problems to fix
-- one big file (like to have many files with clear responsiblities)
+<!-- one big file (like to have many files with clear responsiblities) -->
 - how do we access store.getState and store.dispatch if we don't have a store variable?
 - get rid of
 ```
@@ -161,3 +156,39 @@ Add buttons, actions, and cases to your reducer so that we can increment and dec
     });
   }
 ```
+- state with many keys - like it to be _simpler_
+- same action in lots of places, mispelling becomes easy
+- async
+- what does this look like in a bigger app?
+
+
+## `react-redux` Provider and Connect
+
+- refactor into files
+- install react-redux
+- introduce the Provider
+- `connect`ing our components
+- `mapStateToProps`
+- `mapDispatchToProps`
+
+
+## What should get its own file?
+- reducer
+- store
+- App
+- Header
+- Counter
+
+
+## Higher Order Components and Connect
+// withRouter
+// wrap a component in it
+// gave that component the  { history, location, match } as props
+// <Route component={MyComponent} />
+// <Route render={(props) => MyComponent } />
+// MyWrappedComponent = withRouter(MyComponent)
+
+// withRouter is a "Higher Order Component"
+// function (Component) => Component
+
+// connect(configuration) => (Component) => WrappedComponent
