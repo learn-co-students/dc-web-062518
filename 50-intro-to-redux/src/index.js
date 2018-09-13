@@ -3,27 +3,73 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import logo from "./logo.svg";
 import "./App.css";
+import { createStore } from "redux";
+
+// keys and _types_ of values
+// { count: number } starts at 0
+// get an init action first
+// state comes in as undefined
+
+// default param
+// if (oldState === undefined) {
+//   return {
+//     count: 0
+//   };
+// }
+
+const reducer = (oldState = { count: 5 }, action) => {
+  console.log("action", action, "state", oldState);
+  switch (action.type) {
+    // case "INCREMENT":
+    // return { count: oldState.count + action.amount };
+    // case "DECREMENT":
+    // return { count: oldState.count - action.amount };
+
+    case "UPDATE":
+      return { count: oldState.count + action.amount };
+
+    // case "INCREMENT_3":
+    // return { count: oldState.count + 3 };
+    // case "DECREMENT_5":
+    // return { count: oldState.count - 5 };
+    default:
+      return oldState;
+  }
+  // if (action.type === "INCREMENT") {
+  // WRONG:
+  // oldState.count += 1
+  // mutates the old state!
+  // Right:
+  // return { count: oldState.count + 1 };
+  // }
+  // return oldState;
+};
+
+// we probably want this to live in it's own file
+const store = createStore(reducer);
 
 class App extends Component {
-  state = { count: 0 };
+  // state = { count: 0 };
 
-  increment = () => {
-    this.setState(prevState => ({ count: prevState.count + 1 }));
-  };
+  // increment = () => {
+  // this.setState(prevState => ({ count: prevState.count + 1 }));
+  // };
 
-  decrement = () => {
-    this.setState(prevState => ({ count: prevState.count - 1 }));
-  };
+  // decrement = () => {
+  // this.setState(prevState => ({ count: prevState.count - 1 }));
+  // };
+
+  componentDidMount() {
+    store.subscribe(() => {
+      this.forceUpdate();
+    });
+  }
 
   render() {
     return (
       <div className="App">
-        <Header count={this.state.count} />
-        <Counter
-          count={this.state.count}
-          increment={this.increment}
-          decrement={this.decrement}
-        />
+        <Header />
+        <Counter />
       </div>
     );
   }
@@ -31,9 +77,10 @@ class App extends Component {
 
 class Header extends Component {
   renderDescription = () => {
-    const remainder = this.props.count % 5;
+    const remainder = store.getState().count % 5;
     const upToNext = 5 - remainder;
-    return `The current count is less than ${this.props.count + upToNext}`;
+    return `The current count is less than ${store.getState().count +
+      upToNext}`;
   };
 
   render() {
@@ -48,12 +95,24 @@ class Header extends Component {
 }
 
 class Counter extends Component {
+  // decrement = amount => {
+  // action: type
+  // { type: 'DECREMENT' }
+  // store.dispatch({ type: "DECREMENT", amount: amount });
+  // };
+
+  update = amount => {
+    store.dispatch({ type: "UPDATE", amount: amount });
+  };
+
   render() {
     return (
       <div className="Counter">
-        <h1>{this.props.count}</h1>
-        <button onClick={this.props.decrement}> - </button>
-        <button onClick={this.props.increment}> + </button>
+        <h1>{store.getState().count}</h1>
+        <button onClick={() => this.update(-5)}> - 5 </button>
+        <button onClick={() => this.update(-1)}> - </button>
+        <button onClick={() => this.update(1)}> + </button>
+        <button onClick={() => this.update(3)}> + 3 </button>
       </div>
     );
   }

@@ -143,4 +143,21 @@ componentDidMount() {
 
 ## Challenge
 
+
+
 Add buttons, actions, and cases to your reducer so that we can increment and decrement by `+3` and `-5`
+
+
+
+
+## Problems to fix
+- one big file (like to have many files with clear responsiblities)
+- how do we access store.getState and store.dispatch if we don't have a store variable?
+- get rid of
+```
+  componentDidMount() {
+    store.subscribe(() => {
+      this.forceUpdate();
+    });
+  }
+```
