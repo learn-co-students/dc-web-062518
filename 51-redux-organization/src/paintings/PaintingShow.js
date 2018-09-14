@@ -1,6 +1,10 @@
-import React from 'react';
+import React from "react";
+import { deletePainting } from "../actions";
+import { connect } from "react-redux";
 
-const PaintingShow = ({ painting }) => {
+const PaintingShow = props => {
+  console.log(props);
+  let { painting } = props;
   return (
     <div className="ui card">
       <div className="image">
@@ -20,10 +24,18 @@ const PaintingShow = ({ painting }) => {
           </p>
           <p>{painting.artist.hometown}</p>
         </div>
-        <div className="ui basic red right aligned button">Delete</div>
+        <div
+          onClick={() => props.deletePainting(painting.id)}
+          className="ui basic red right aligned button"
+        >
+          Delete
+        </div>
       </div>
     </div>
   );
 };
 
-export default PaintingShow;
+export default connect(
+  null,
+  { deletePainting }
+)(PaintingShow);

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PaintingList from './PaintingList';
-import PaintingShow from './PaintingShow';
-import * as actions from '../actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PaintingList from "./PaintingList";
+import PaintingShow from "./PaintingShow";
+import * as actions from "../actions";
 // NOTE: actions is a directory.
 // By default import will look for a file called index.js in any directory
 
@@ -38,7 +38,10 @@ const mapStateToProps = state => ({
   activePainting: state.paintings.find(p => p.id === state.activePaintingId)
 });
 
-export default connect(mapStateToProps, actions)(PaintingContainer);
+export default connect(
+  mapStateToProps,
+  actions
+)(PaintingContainer);
 // NOTE: here we're using the shorthand syntax for mapDispatchToProps
 // (This is the recommended way to do this)
 // it works like this:

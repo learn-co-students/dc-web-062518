@@ -1,13 +1,41 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
+import React from "react";
+// import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { selectPainting } from "../actions";
 
-const PaintingListItem = ({ painting, selectPainting }) => {
+const PaintingListItem = props => {
   return (
-    <div onClick={() => selectPainting(painting.id)} className="ui item">
-      <span style={{ cursor: 'pointer' }}>{painting.title}</span>
+    <div
+      onClick={() => props.selectPainting(props.painting.id)}
+      className="ui item"
+    >
+      <span style={{ cursor: "pointer" }}>{props.painting.title}</span>
     </div>
   );
 };
 
-export default connect(null, actions)(PaintingListItem);
+// parent => { painting: { paintingData } }
+// store (mapStateToProps) => { name: 'Rob', count: 4 }
+// actions (mapDispatchToProps) => { selectPainting: some function that does our action }
+// connect => {  painting: { paintingData },  name: 'Rob', count: 4,  selectPainting: some function that does our action }
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     selectPaintingProp: (...allTheArgs) =>
+//       dispatch(selectPaintingActionCreator(...allTheArgs))
+//   };
+// };
+
+// const mapDispatchToProps = function(dispatch) {
+//   return bindActionCreators(
+//     {
+//       selectPainting: selectPaintingActionCreator
+//     },
+//     dispatch
+//   );
+// }
+
+export default connect(
+  null,
+  { selectPainting }
+)(PaintingListItem);

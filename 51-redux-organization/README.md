@@ -2,8 +2,8 @@
 
 - Thinking in Redux
 - actions folder, types and actionCreators
-- combineReducers
 - debugging Redux
+- combineReducers
 
 ## Thinking in Redux
 
