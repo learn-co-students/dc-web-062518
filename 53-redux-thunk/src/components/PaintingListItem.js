@@ -4,12 +4,18 @@ import { connect } from "react-redux";
 import { selectPainting } from "../actions";
 
 const PaintingListItem = props => {
+  // console.log(props.painting.museum.name);
   return (
     <div
       onClick={() => props.selectPainting(props.painting.id)}
       className="ui item"
     >
-      <span style={{ cursor: "pointer" }}>{props.painting.title}</span>
+      <span style={{ cursor: "pointer" }}>
+        <span className="ui sub header">{props.painting.title}</span>
+        <span className="ui label">
+          {props.painting.collecting_institution}
+        </span>
+      </span>
     </div>
   );
 };

@@ -2,16 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PaintingList from "./PaintingList";
 import PaintingShow from "./PaintingShow";
-import * as actions from "../actions";
+import { fetchPaintings } from "../actions";
 // NOTE: actions is a directory.
 // By default import will look for a file called index.js in any directory
 
 class PaintingContainer extends Component {
   componentDidMount() {
-    // NOTE: no async stuff yet. For now we'll
-    // just fetch some data in another file.
-    // We'll still use the lifecycle method
-    // so we can easily add async later
     this.props.fetchPaintings();
   }
 
@@ -34,14 +30,19 @@ class PaintingContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  paintings: state.paintings,
+  paintings: state.activeGallery
+    ? state.paintings.filter(
+        painting => state.activeGallery === painting.collecting_institution
+      )
+    : state.paintings,
   activePainting: state.paintings.find(p => p.id === state.activePaintingId)
 });
 
 export default connect(
   mapStateToProps,
-  actions
+  { fetchPaintings }
 )(PaintingContainer);
+
 // NOTE: here we're using the shorthand syntax for mapDispatchToProps
 // (This is the recommended way to do this)
 // it works like this:
