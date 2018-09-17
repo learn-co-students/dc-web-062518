@@ -1,9 +1,8 @@
 import React from "react";
-import { deletePainting } from "../actions";
+import { deletePainting } from "../redux/actions";
 import { connect } from "react-redux";
 
 const PaintingShow = props => {
-  console.log(props);
   let { painting } = props;
   return (
     <div className="ui card">

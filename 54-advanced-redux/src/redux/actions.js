@@ -1,5 +1,7 @@
 import {
-  FETCH_PAINTINGS,
+  ERROR,
+  LOADING_PAINTINGS,
+  LOADED_PAINTINGS,
   SELECT_ACTIVE_PAINTING,
   DELETE_PAINTING,
   SELECT_GALLERY
@@ -11,11 +13,15 @@ import {
 // moving our action logic out of our components
 export function fetchPaintings() {
   return function(dispatch) {
-    fetch(`http://localhost:3000/paintings`)
+    dispatch({ type: LOADING_PAINTINGS });
+    fetch(`http://localhost:3001/paintings`)
       .then(res => res.json())
       .then(paintings => {
-        dispatch({ type: FETCH_PAINTINGS, payload: paintings });
-      });
+        dispatch({ type: LOADED_PAINTINGS, payload: paintings });
+      })
+      .catch(err =>
+        dispatch({ type: ERROR, err: "failed to fetch paintings" })
+      );
   };
 }
 

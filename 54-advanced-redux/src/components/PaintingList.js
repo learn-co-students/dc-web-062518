@@ -1,5 +1,5 @@
-import React from 'react';
-import PaintingListItem from './PaintingListItem';
+import React from "react";
+import PaintingListItem from "./PaintingListItem";
 
 const PaintingList = ({ paintings }) => {
   const items = paintings.map(pntg => (

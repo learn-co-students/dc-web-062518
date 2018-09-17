@@ -1,41 +1,50 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectGallery } from "../actions";
+import { selectGallery } from "../redux/actions";
 
-const galleries = [
-  "National Gallery of Art, Washington D.C.",
-  "Mauritshuis, The Hague"
-];
+// const galleries = [
+// "National Gallery of Art, Washington D.C.",
+// "Mauritshuis, The Hague"
+// ];
 
 // galleries - nice to have them coming in from the data
-// show as active the one we click
-const MuseumPicker = ({ activeGallery, selectGallery }) => {
+const MuseumPicker = ({ activeGallery, selectGallery, galleries }) => {
   return (
     <div className="row">
       <div className="ui inverted menu">
         <div
-          onClick={() => selectGallery(null)}
-          className={activeGallery === null ? "ui active item" : "item"}
+          onClick={() => selectGallery("")}
+          className={activeGallery === "" ? "ui active item" : "item"}
         >
           All Museums
         </div>
-        {galleries.map(gallery => (
-          <div
-            key={gallery}
-            onClick={() => selectGallery(gallery)}
-            className={activeGallery === gallery ? "ui active item" : "item"}
-          >
-            {gallery}
-          </div>
-        ))}
+        <select
+          value={activeGallery}
+          onChange={e => selectGallery(e.target.value)}
+        >
+          {galleries.map(gallery => <option key={gallery}>{gallery}</option>)}
+        </select>
       </div>
     </div>
   );
 };
 
+const uniqMuseums = arr => {
+  let uniqueItems = [];
+  arr.forEach(item => {
+    if (!uniqueItems.includes(item) && item !== "") {
+      uniqueItems.push(item);
+    }
+  });
+  return uniqueItems;
+};
+
 const mapStateToProps = state => {
   return {
-    activeGallery: state.activeGallery
+    activeGallery: state.activeGallery,
+    galleries: uniqMuseums(
+      state.paintings.map(painting => painting.collecting_institution)
+    )
   };
 };
 
