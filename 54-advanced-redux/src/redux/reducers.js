@@ -4,7 +4,7 @@ import {
   LOADING_PAINTINGS,
   LOADED_PAINTINGS,
   SELECT_ACTIVE_PAINTING,
-  DELETE_PAINTING,
+  UPDATE_PAINTING,
   SELECT_GALLERY
 } from "./types";
 
@@ -14,8 +14,11 @@ const paintingsReducer = (state = [], action) => {
       return [];
     case LOADED_PAINTINGS:
       return [...action.payload];
-    case DELETE_PAINTING:
-      return state.filter(painting => painting.id !== action.id);
+    case UPDATE_PAINTING:
+      // how would we update in place?
+      return state.map(
+        painting => (painting.id === action.id ? action.painting : painting)
+      );
     default:
       return state;
   }
@@ -25,8 +28,8 @@ const activePaintingIdReducer = (state = null, action) => {
   switch (action.type) {
     case SELECT_ACTIVE_PAINTING:
       return action.id;
-    case DELETE_PAINTING:
-      return null;
+    // case UPDATE_PAINTING:
+    // return null;
     default:
       return state;
   }

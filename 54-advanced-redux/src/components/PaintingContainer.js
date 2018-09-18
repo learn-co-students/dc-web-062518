@@ -31,15 +31,21 @@ class PaintingContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  loadingPaintings: state.loadingPaintings,
-  paintings: state.activeGallery
-    ? state.paintings.filter(
-        painting => state.activeGallery === painting.collecting_institution
-      )
-    : state.paintings,
-  activePainting: state.paintings.find(p => p.id === state.activePaintingId)
-});
+const mapStateToProps = state => {
+  let nonDeletedPaintings = state.paintings.filter(
+    painting => !painting.deleted
+  );
+  return {
+    loadingPaintings: state.loadingPaintings,
+    // TODO filter paintings
+    paintings: state.activeGallery
+      ? nonDeletedPaintings.filter(
+          painting => state.activeGallery === painting.collecting_institution
+        )
+      : nonDeletedPaintings,
+    activePainting: state.paintings.find(p => p.id === state.activePaintingId)
+  };
+};
 
 export default connect(
   mapStateToProps,

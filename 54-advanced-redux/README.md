@@ -10,10 +10,32 @@
 - X highlight selected painting
 - X Unknown gallery instead of empty chiclet
 - X show spinner when loading paintings
-- make delete button work
+
+
+- X make delete button work
+Deletion should be persisted
+
+1 DELETE request to backend - deletes the painting
+2 PATCH request to mark as deleted (`painting.deleted = true`)
+
 - votes / likes
+
+1 Display on the paintingshow component
+2 button on the paintingshow component
+3 action for that button to dispatch
+4 maybe a new reducer? update to an existing reducer?
+
+X Display the likes
+X Update in place, rather than painting jump
+X Show that a painting has been deleted
+
 - add create / edit painting form
 - search bar for paintings
+- show trash bin of paintings deleted
+
+## Questions
+- router and redux
+- auth
 
 ## Thunks and Spinners
 
@@ -49,7 +71,10 @@ function getData() {
 
 - What's the flow at this point?
 - Order of tasks as a developer
+  - Build vertically!
+  - One user story at a time
 - How do we think in redux?
+
 
 - where should ids get created? (in the action or in the reducer (or neither?))
   - action > reducer

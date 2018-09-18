@@ -20,7 +20,8 @@
         "birthday": "1410",
         "deathday": "1475"
       },
-      "votes": 64
+      "votes": 64,
+      "deleted": true
     },
     {
       "id": "59bd5a4c275b247913821d2a",
@@ -42,7 +43,8 @@
         "birthday": "1632",
         "deathday": "1675"
       },
-      "votes": 21
+      "votes": 21,
+      "deleted": true
     },
     {
       "id": "59bd5a2acb4c274d74388a33",
@@ -64,7 +66,9 @@
         "birthday": "1606",
         "deathday": "1669"
       },
-      "votes": 30
+      "votes": 30,
+      "likes": 13,
+      "deleted": true
     },
     {
       "id": "59bd59ee9c18db5297a32338",
@@ -86,7 +90,8 @@
         "birthday": "1577",
         "deathday": "1640"
       },
-      "votes": 96
+      "votes": 96,
+      "deleted": true
     },
     {
       "id": "59bd59eba09a672fdae25803",
@@ -108,7 +113,8 @@
         "birthday": "1410",
         "deathday": "1475"
       },
-      "votes": 80
+      "votes": 80,
+      "deleted": true
     },
     {
       "id": "59bd59dda09a672f268ace8a",
@@ -196,7 +202,9 @@
         "birthday": "1606",
         "deathday": "1669"
       },
-      "votes": 41
+      "votes": 41,
+      "likes": 11,
+      "deleted": true
     },
     {
       "id": "59bd59d57622dd4d722119ee",
@@ -240,7 +248,9 @@
         "birthday": "1546",
         "deathday": "1611"
       },
-      "votes": 30
+      "votes": 30,
+      "likes": 6,
+      "deleted": true
     },
     {
       "id": "516dfbcfed1712d0a8000c6d",
