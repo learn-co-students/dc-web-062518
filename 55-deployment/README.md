@@ -35,13 +35,34 @@ What are the parts of our system now?
 Strategy:
 - push backend to heroku
 - push frontend to heroku
+
+Steps:
+  - (git init)
+  - heroku create
+  - git push heroku master
+
 - make changes to both to work on heroku
 
 ### Deployments: What's different between local and prod?
+- speed
+  - network time becomes a concern
+- fetches have different urls
+- scale:
+  - 19000 hospitals
+  - normally, on localhost, we don't store millions of users!
+- compatibility
+  - browser compatibility
+  - integrating with other developers code
+- can't just change the files on the production server
+
+
+
 - Environment variables
   `ENV['SECRET_KEY_BASE']`
 - secrets
+
 - which database we access
+
 - asset storage (CDN vs local)
 - where blobs get saved (local machine vs. S3)
 - where logs and debug info get logged
@@ -58,13 +79,16 @@ Strategies:
 - Automated testing (rspec, jest)
   - run these locally
   - run before the app is deployed
+
 - Manual QA
   - as feature developer, click all your buttons
   - often, use a 'staging' environment for manual testing
   - 'feature flags' let you turn on a feature for a subset of users
 
 ### QA for your projects
-Employers will look at your projects. You need to make sure that what they see makes sense and works. Bugs in deployed projects can cost you an offer!
+Employers will look at your projects.
+
+You need to make sure that what they see makes sense and works. Bugs in deployed projects can cost you an offer!
 
 How can you prevent that?
 - Test your app!
