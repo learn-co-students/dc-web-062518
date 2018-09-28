@@ -1,4 +1,4 @@
-### Testing In React
+# Testing In React
 
 ## What is Test- Driven Development?
 Test Driven Development (TDD) involves writing tests first for what behaviors you want your code to have, then writing your code around those tests.
@@ -8,14 +8,14 @@ Red: Write the test, run test suite, watch test fail
 Green: Write the code to pass the test, run the test suite, watch the test pass
 Refactor: Refactor the code
 
-# Pros
+### Pros
 - Forces you to design your code before implementing
 - Module code is easier to test, so TDD forces good architecture
 - Increased confidence that code behaves as expected
 - Easier collaboration - team members can edit code with confidence
 - Good documentation
 
-# Cons
+### Cons
 - Takes time, and slow down the initial development
 - Can be difficult to learn best practices, knowing what to test, etc.
 - Forces you to think about the expected outcome before implementing
