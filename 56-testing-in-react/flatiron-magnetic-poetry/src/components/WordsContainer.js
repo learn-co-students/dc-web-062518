@@ -5,7 +5,7 @@ import Header from "./Header"
 import { Grid, Container } from 'semantic-ui-react'
 import { fetchWords } from "../redux/actions"
 import { connect } from 'react-redux'
-
+import ModalScroll from "./ModalBug"
 class WordsContainer extends React.Component {
   componentDidMount() {
     this.props.fetchWords();
@@ -15,6 +15,7 @@ class WordsContainer extends React.Component {
     return (
       <Container>
         <Header />
+        <ModalScroll />
         <Grid>
           <Grid.Row columns={2}>
             <Grid.Column>
