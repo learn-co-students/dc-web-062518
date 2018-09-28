@@ -1,17 +1,5 @@
 ### Testing In React
 
-## Table of  Contents
-- TDD - what is is good for?
-- Introduction to Jest
-- Writing your first Jest test
-- Intro to Enzyme
-- Prepping your code for enzyme Tests
-- Writing your first enzyme tests
-- Jest snapshots Introduction
-- writing your first jest snapshots
-- testing your first snapshot works
-
-
 ## What is Test- Driven Development?
 Test Driven Development (TDD) involves writing tests first for what behaviors you want your code to have, then writing your code around those tests.
 
