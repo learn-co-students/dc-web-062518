@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PaintingContainer from './paintings/PaintingContainer';
-import MuseumPicker from './paintings/MuseumPicker';
+import React, { Component } from "react";
+import PaintingContainer from "./components/PaintingContainer";
+import MuseumPicker from "./components/MuseumPicker";
 
 class App extends Component {
   render() {

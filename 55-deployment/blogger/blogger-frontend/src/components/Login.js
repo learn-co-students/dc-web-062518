@@ -1,6 +1,10 @@
 import React from "react";
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = "localhost:3000";
+if (process.env.NODE_ENV === "development") {
+  console.log("we are in development");
+}
+console.log(process.env, "this is the base url");
 
 class Login extends React.Component {
   state = {
