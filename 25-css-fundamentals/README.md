@@ -83,7 +83,10 @@ Does a lot of the CSS work for us
 
 ## Resources
 
-[Awwwards](https://www.awwwards.com/)
-[codrops](https://tympanus.net/codrops/css_reference/)
-[CSS Tricks](https://css-tricks.com/)
-[CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [CSS Diner](https://flukeout.github.io/)
+- [CSS Flexbox Froggy](https://flexboxfroggy.com/)
+- [CSS Grid Garden](http://cssgridgarden.com/)
+- [Awwwards](https://www.awwwards.com/)
+- [codrops](https://tympanus.net/codrops/css_reference/)
+- [CSS Tricks](https://css-tricks.com/)
+- [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
